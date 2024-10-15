@@ -1,0 +1,107 @@
+/* Global Styling */
+body {
+  font-family: 'Georgia', serif; /* Elegant and classic serif font for body text */
+  font-size: 18px; /* Slightly larger text size for readability */
+  line-height: 1.75; /* Increase line height for better text readability */
+  color: #2C3E50; /* Dark blue-gray for body text */
+  background-color: #F4F4F9; /* Very light gray background to reduce eye strain */
+  margin: 0; /* Reset default margin */
+  padding: 20px 40px; /* Add padding to create space around content */
+}
+
+/* Headings Styling */
+h1 {
+  font-family: 'Arial Black', sans-serif; /* Bold sans-serif font for the main title */
+  font-size: 3em; /* Large font size for the main heading */
+  color: #34495E; /* Dark blue for strong emphasis */
+  margin-bottom: 30px; /* Space between heading and next element */
+}
+
+h2 {
+  font-family: 'Arial', sans-serif; /* Clean sans-serif for sub-headings */
+  font-size: 2.5em; /* Slightly smaller than main heading */
+  color: #E74C3C; /* Red for clear distinction */
+  margin-top: 20px;
+  margin-bottom: 20px; /* Space above and below each subheading */
+}
+
+/* Paragraph Styling */
+p {
+  margin-bottom: 20px; /* Consistent spacing between paragraphs */
+  color: #2C3E50; /* Dark blue-gray for readability */
+}
+
+/* Strong and Emphasized Text */
+strong {
+  color: #C0392B; /* Strong, deep red for emphasized content */
+}
+
+em {
+  color: #16A085; /* Soft green for emphasis */
+}
+
+/* Section Styling */
+section {
+  margin-bottom: 25px; /* Space between sections */
+  padding-left: 20px; /* Padding inside each section */
+  border-left: 4px solid #3498DB; /* Light blue left border for section distinction */
+}
+
+/* Link Styling */
+a {
+  color: #2980B9; /* Blue for standard links */
+  text-decoration: none;
+}
+
+a:visited {
+  color: #8E44AD; /* Purple for visited links */
+}
+
+a:hover {
+  color: #E67E22; /* Orange on hover */
+  text-decoration: underline;
+}
+
+/* Footer Styling */
+footer {
+  margin-top: 40px;
+  font-size: 14px; /* Smaller font for footer */
+  text-align: center;
+  color: #7F8C8D; /* Soft gray for less prominent information */
+  border-top: 1px solid #BDC3C7; /* Subtle top border */
+  padding-top: 10px;
+}
+
+/* Button Styling (optional) */
+button {
+  background-color: #1ABC9C; /* Light green background */
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 1.2em; /* Large enough button text */
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #16A085; /* Darker green on hover */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  body {
+    padding: 15px; /* Reduce padding on smaller screens */
+  }
+
+  h1 {
+    font-size: 2.2em; /* Reduce title size for smaller screens */
+  }
+
+  h2 {
+    font-size: 1.8em; /* Adjust subheading size */
+  }
+
+  p {
+    font-size: 16px; /* Adjust text size for smaller screens */
+  }
+}
