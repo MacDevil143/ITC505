@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holy Grail Layout with JS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>My Amazing Website</h1>
+            <p>A site with a Holy Grail Layout</p>
+        </header>
+
+        <!-- Sidebar -->
+        <nav class="sidebar">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <h2>Interactive JavaScript Feature</h2>
+            <p>Click the button to sort the array:</p>
+            <button id="sortBtn">Sort Array</button>
+            <p id="result">Array: [5, 3, 8, 1, 2]</p>
+        </main>
+
+        <!-- Advertisement -->
+        <aside class="advertisement">
+            <a href="https://www.amazon.in/Status-Printed-Vintage-Persian-Bedroom/dp/B07VD3XPGY?dib=eyJ2IjoiMSJ9._PC8NuZhctEqeUTOygxTnQtGXcmbPaistDBBYoGtlRepJzA_jNfLOa0otD5iUwoHadUxrWXeRxCDdtO7PwTsdsk1EfrVg7pEdOaQnJPfolLikIB7k5SF-euPBgJCJJKVliF5ba5vRWe5_v132OtV1E2GyPlOHnlhc7EAmaQyAInMexRH5Sv4PGgCrLVPHJEAEUH97ZHsgKqj8ROdHGMUt0D384Ao2ikE7L_Fr6oo7RZTU0IbiqB_Z8g27O8OdBSRAmnuohAabql1FqH1waceEa2ByyvwW_cGlPsRpdpyAco.Li0ogAqg5u8sSJOXIKUuu3kpfqmmIGn9cBCL-g4lGOE&dib_tag=se&keywords=Status&nsdOptOutParam=true&pf_rd_i=1380442031&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_p=f90858ce-92f2-4510-b595-3dbb725d8de6&pf_rd_r=BA4RQDXYXRD2EQ1ZCM6W&pf_rd_s=merchandised-search-8&qid=1731400296&refinements=p_89%3AStatus+Contract&s=kitchen&sr=1-1" target="_blank">
+                <img src="81zT9bXhpNL._AC_UL640_FMwebp_QL65_.webp" alt="Product Advertisement" />
+            </a>
+        </aside>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>Last updated: <span id="lastModified"></span></p>
+        <p>In this project, I created an interactive feature that sorts an array of integers. The JavaScript sorts the array when the user clicks a button. There were no significant challenges.</p>
+    </footer>
+    <script src="script.js"></script>
+    <script type="text/javascript">
+        var x = document.lastModified;
+        console.log('time date', x);
+        document.getElementById('lastModified').textContent = x;
+    </script>
+</body>
+</html>
