@@ -19,7 +19,7 @@ app.post('/cs212/homework/8', (req, res) => {
     const { adjective, pluralNoun, personName, verb, noun } = req.body;
     const madLib = `This evening, I stumbled upon a ${adjective} cluster of ${pluralNoun} reminiscent of ${personName}. As a result, I decided to ${verb} close to the ${noun}.`;
 
-    res.send(madLib);
+    res.send(MAD LIB);
 });
 
 module.exports = app;
