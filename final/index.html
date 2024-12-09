@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lights Out</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        .grid { display: grid; grid-template-columns: repeat(5, 60px); gap: 5px; justify-content: center; margin: 20px auto; }
+        .cell { width: 60px; height: 60px; background-color: red; border: 1px solid black; cursor: pointer; }
+        .cell.is-off { background-color: blue; }
+        .controls { margin: 20px; }
+        .controls p { margin: 5px 0; }
+    </style>
+</head>
+<body>
+    <h1>Lights Out</h1>
+    <div class="controls">
+        <p>Moves: <span id="moveCounter">0</span></p>
+        <p>Time: <span id="timeCounter">0</span> seconds</p>
+        <button id="restartButton">Restart Game</button>
+    </div>
+    <div class="grid" id="gameBoard"></div>
+    <section class="addendum">
+        <h2>Addendum</h2>
+        <p><strong>Process:</strong> This project involved designing a 5x5 grid where each cell toggles its state and the states of its neighbors upon a click. The initial setup ensures the board is random but solvable by simulating random clicks.</p>
+        <p><strong>Creative Choices:</strong> I chose a clean and simple design with yellow cells for "on" and black cells for "off." The grid was created dynamically to ensure scalability and maintainability.</p>
+        <p><strong>Challenges Faced:</strong> Ensuring the initial board configuration was solvable posed a challenge. This was resolved by toggling cells programmatically during the randomization phase. Additionally, I encountered minor issues with boundary conditions, which were debugged using console logs.</p>
+        <p><strong>Insights Gained:</strong> This project deepened my understanding of DOM manipulation, event handling, and game logic. I learned the importance of breaking down complex problems into manageable steps, like isolating cell toggling before building the full game.</p>
+    </section>
+    <footer>
+        <p>Last updated: 
+            <span id="lastModified"></span>
+        </p>
+    </footer>
+    <script>
+        var x = document.lastModified;
+        document.getElementById('lastModified').textContent = x;
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
