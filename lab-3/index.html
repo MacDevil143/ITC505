@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Font Delivery Example</title>
+    <link href="https://fonts.google.com/share?selection.family=Playwrite+HR+Lijeva:wght@100..400|Playwrite+HU:wght@100..400" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Great Vibes', cursive;
+            background-color: #f0f0f0;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        h1 {
+            font-size: 48px;
+        }
+
+        p {
+            font-size: 20px;
+        }
+
+        #current-time {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>About BMW (Bayerische Motoren Werke Aktiengesellschaft) </h1>
+    <p>Bayerische Motoren Werke AG, commonly known as BMW, is a leading German manufacturer of luxury automobiles and motorcycles. Founded in 1916, BMW initially focused on aircraft engine production before transitioning to motorcycles in 1923 and automobiles in 1928. Headquartered in Munich, Germany, BMW is renowned for its innovative engineering, exceptional performance, and premium design. The company operates several brands, including BMW, MINI, and Rolls-Royce, catering to a diverse range of luxury vehicle markets. BMW is also heavily involved in motorsport, particularly with its M series, which emphasizes high-performance vehicles.
+
+</p>
+    <p>BMW is at the forefront of automotive innovation, blending cutting-edge technology with sustainable practices. The brand has pioneered advancements in electric and hybrid vehicles, notably through its BMW i series, which includes the i3 electric city car and the i8 plug-in hybrid sports car. BMW integrates digital services like its ConnectedDrive platform, offering features such as real-time navigation, driver assistance, and seamless smartphone integration. Sustainability is a core part of BMW’s strategy, focusing on reducing carbon emissions across its production processes and promoting circular economy practices through recycling and renewable energy.</p>
+    <div id="current-time"></div>
+ <script>
+        // Get the current date and time
+        const currentDate = new Date();
+        const options = { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false };
+        document.getElementById('current-time').innerText = currentDate.toLocaleString('en-US', options);
+    </script>
+
+    <footer>
+        <p>&copy; 2024 Your Name | This page was created for ITC505 Lab 3.</p>
+    </footer>
+</body>
+</html>
