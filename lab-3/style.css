@@ -1,0 +1,42 @@
+body {
+    font-family: 'Great Vibes', cursive;
+    background-color: #f0f0f0; /* Light gray background */
+    color: #333; /* Dark gray text color */
+    text-align: center; /* Center align text */
+    padding: 20px; /* Padding around the body */
+}
+
+h1 {
+    font-size: 48px; /* Large font size for the heading */
+    margin-bottom: 20px; /* Space below the heading */
+    color: #4A90E2; /* Blue color for the heading */
+}
+
+p {
+    font-size: 20px; /* Medium font size for the paragraph */
+    margin-bottom: 20px; /* Space below the paragraph */
+    line-height: 1.5; /* Increase line height for readability */
+}
+
+#current-time {
+    font-size: 18px; /* Font size for the current time */
+    margin-top: 20px; /* Space above the current time */
+    color: #E94E77; /* Pink color for the current time */
+}
+
+footer {
+    margin-top: 40px; /* Space above the footer */
+    font-size: 16px; /* Font size for the footer */
+    color: #777; /* Gray color for the footer text */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 36px; /* Smaller font size for heading on small screens */
+    }
+
+    p {
+        font-size: 18px; /* Smaller font size for paragraph on small screens */
+    }
+}
