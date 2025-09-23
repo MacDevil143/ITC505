@@ -1,49 +1,69 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Font Delivery Example</title>
-    <link href="https://fonts.google.com/share?selection.family=Playwrite+HR+Lijeva:wght@100..400|Playwrite+HU:wght@100..400" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Great Vibes', cursive;
-            background-color: #f0f0f0;
-            color: #333;
-            text-align: center;
-            padding: 20px;
-        }
-        
-        h1 {
-            font-size: 48px;
-        }
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ridiculous Font Demo – Press Start 2P</title>
 
-        p {
-            font-size: 20px;
-        }
+  <!-- Preload the self-hosted font for faster first paint -->
+  <link rel="preload"
+        href="/fonts/PressStart2P.woff2"
+        as="font"
+        type="font/woff2"
+        crossorigin>
 
-        #current-time {
-            font-size: 18px;
-            margin-top: 20px;
-        }
-    </style>
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    /* Quick inline fallback in case styles.css fails to load for any reason */
+    html { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+  </style>
 </head>
 <body>
-    <h1>About BMW (Bayerische Motoren Werke Aktiengesellschaft) </h1>
-    <p>Bayerische Motoren Werke AG, commonly known as BMW, is a leading German manufacturer of luxury automobiles and motorcycles. Founded in 1916, BMW initially focused on aircraft engine production before transitioning to motorcycles in 1923 and automobiles in 1928. Headquartered in Munich, Germany, BMW is renowned for its innovative engineering, exceptional performance, and premium design. The company operates several brands, including BMW, MINI, and Rolls-Royce, catering to a diverse range of luxury vehicle markets. BMW is also heavily involved in motorsport, particularly with its M series, which emphasizes high-performance vehicles.
+  <header class="hero">
+    <h1>WELCOME, HUMAN 💾</h1>
+    <p class="tagline">This page is intentionally <em>font-crazy</em> to prove the font is being served by me.</p>
+  </header>
 
-</p>
-    <p>BMW is at the forefront of automotive innovation, blending cutting-edge technology with sustainable practices. The brand has pioneered advancements in electric and hybrid vehicles, notably through its BMW i series, which includes the i3 electric city car and the i8 plug-in hybrid sports car. BMW integrates digital services like its ConnectedDrive platform, offering features such as real-time navigation, driver assistance, and seamless smartphone integration. Sustainability is a core part of BMW’s strategy, focusing on reducing carbon emissions across its production processes and promoting circular economy practices through recycling and renewable energy.</p>
-    <div id="current-time"></div>
- <script>
-        // Get the current date and time
-        const currentDate = new Date();
-        const options = { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false };
-        document.getElementById('current-time').innerText = currentDate.toLocaleString('en-US', options);
-    </script>
+  <main class="content">
+    <section>
+      <h2>What’s going on?</h2>
+      <p>
+        I’m using a webfont that most people won’t have installed: <strong>Press Start 2P</strong>.
+        It’s self-hosted (not pulled from a CDN) via <code>@font-face</code> and the file is
+        <code>fonts/PressStart2P.woff2</code>. If you see a chunky, retro, pixelated look: success!
+      </p>
+    </section>
 
-    <footer>
-        <p>&copy; 2024 Paul Revanth | This page was created for ITC505 Lab 3.</p>
-    </footer>
+    <section>
+      <h2>Readable but ridiculous</h2>
+      <p>
+        The font is obviously “weird,” but still maps A-Z and a-z to normal letters
+        (i.e., not Wingdings). I’ve bumped the base size and line height for legibility.
+      </p>
+      <button class="big-button">LOOK AT THIS BUTTON</button>
+    </section>
+
+    <section>
+      <h2>How I served the font (short explanation)</h2>
+      <ol>
+        <li>Downloaded an open-licensed font (Press Start 2P) and converted/kept a <code>.woff2</code> file.</li>
+        <li>Placed it in <code>/fonts/PressStart2P.woff2</code>.</li>
+        <li>Declared it with <code>@font-face</code> in <code>styles.css</code>, using <code>font-display: swap</code>.</li>
+        <li>Preloaded it in the HTML <code>&lt;head&gt;</code> for better performance.</li>
+        <li>Applied it site-wide via <code>body { font-family: "PressStart2P", ... }</code>.</li>
+      </ol>
+    </section>
+  </main>
+
+  <!-- REQUIRED FOOTER (exactly as provided) -->
+  <footer>
+    <p>Last updated: 
+        <span id="lastModified"></span>
+    </p>
+  </footer>
+  <script type="text/javascript">
+       var x = document.lastModified;
+       document.getElementById('lastModified').textContent = x;
+  </script>
 </body>
 </html>
