@@ -1,69 +1,39 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ridiculous Font Demo – Press Start 2P</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serving Custom Fonts</title>
 
-  <!-- Preload the self-hosted font for faster first paint -->
-  <link rel="preload"
-        href="/fonts/PressStart2P.woff2"
-        as="font"
-        type="font/woff2"
-        crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="/style.css">
-  <style>
-    /* Quick inline fallback in case styles.css fails to load for any reason */
-    html { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
-  </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="hero">
-    <h1>WELCOME, HUMAN 💾</h1>
-    <p class="tagline">This page is intentionally <em>font-crazy</em> to prove the font is being served by me.</p>
-  </header>
+    <h1>How to Serve a Custom Web Font 🕸️</h1>
 
-  <main class="content">
-    <section>
-      <h2>What’s going on?</h2>
-      <p>
-        I’m using a webfont that most people won’t have installed: <strong>Press Start 2P</strong>.
-        It’s self-hosted (not pulled from a CDN) via <code>@font-face</code> and the file is
-        <code>fonts/PressStart2P.woff2</code>. If you see a chunky, retro, pixelated look: success!
-      </p>
-    </section>
-
-    <section>
-      <h2>Readable but ridiculous</h2>
-      <p>
-        The font is obviously “weird,” but still maps A-Z and a-z to normal letters
-        (i.e., not Wingdings). I’ve bumped the base size and line height for legibility.
-      </p>
-      <button class="big-button">LOOK AT THIS BUTTON</button>
-    </section>
-
-    <section>
-      <h2>How I served the font (short explanation)</h2>
-      <ol>
-        <li>Downloaded an open-licensed font (Press Start 2P) and converted/kept a <code>.woff2</code> file.</li>
-        <li>Placed it in <code>/fonts/PressStart2P.woff2</code>.</li>
-        <li>Declared it with <code>@font-face</code> in <code>styles.css</code>, using <code>font-display: swap</code>.</li>
-        <li>Preloaded it in the HTML <code>&lt;head&gt;</code> for better performance.</li>
-        <li>Applied it site-wide via <code>body { font-family: "PressStart2P", ... }</code>.</li>
-      </ol>
-    </section>
-  </main>
-
-  <!-- REQUIRED FOOTER (exactly as provided) -->
-  <footer>
-    <p>Last updated: 
-        <span id="lastModified"></span>
+    <p>
+        This page uses a custom font called "Creepster" that is not installed on your computer. Your browser is able to display it because I am serving it directly from Google's servers. This is one of the easiest ways to ensure your website has a unique look, regardless of what fonts a visitor has on their own system.
     </p>
-  </footer>
-  <script type="text/javascript">
-       var x = document.lastModified;
-       document.getElementById('lastModified').textContent = x;
-  </script>
+
+    <h2>The Process</h2>
+    <p>
+        First, I went to a font hosting service (Google Fonts) and chose this font. The service provided an HTML <code>&lt;link&gt;</code> tag, which I added to the <code>&lt;head&gt;</code> of this document. This link tells your browser where to download the font files.
+    </p>
+    <p>
+        Next, in my CSS file, I used the <code>font-family</code> property to apply "Creepster" to the text on this page. I also included a fallback font (<code>cursive</code>), which your browser would use just in case it couldn't download the custom font for some reason.
+    </p>
+
+    <footer>
+        <p>Last updated: 
+            <span id="lastModified"></span>
+        </p>
+    </footer>
+    <script type="text/javascript">
+         var x = document.lastModified;
+         document.getElementById('lastModified').textContent = x;
+    </script>
 </body>
 </html>
