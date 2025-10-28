@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ITC505 — Lab 6: Holy Grail + JS</title>
+  <link rel="stylesheet" href="styles.css">
+  <meta name="description" content="Holy Grail layout with an interactive Bubble Sort visualizer (ITC505 lab-6)" />
+</head>
+<body>
+  <div class="page-grid" id="pageGrid">
+    <header class="site-header" role="banner">
+      <div class="header-inner">
+        <img src="https://images.seeklogo.com/logo-png/48/1/northern-arizona-university-logo-png_seeklogo-483353.png" alt="" aria-hidden="true" class="logo">
+        <h1>ITC505 — Lab 6: Algorithms & Layout</h1>
+        <p class="subtitle">Holy Grail layout LAB 6</p>
+      </div>
+    </header>
+
+    <nav class="site-nav" aria-label="Primary site navigation">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Lectures</a></li>
+        <li><a href="#">Labs</a></li>
+        <li><a href="#">Assignments</a></li>
+        <li><a href="#">Resources</a></li>
+      </ul>
+    </nav>
+
+    <main class="site-main" id="mainContent" role="main">
+      <section class="content-card" aria-labelledby="visualizerTitle">
+        <h2 id="visualizerTitle">Bubble Sort Visualizer</h2>
+        <p class="lead">Interactive demonstration of bubble sort. Generate an array, then sort it step-by-step or animate the sort.</p>
+
+        <div class="controls" aria-hidden="false">
+          <label>
+            Array size:
+            <input id="sizeInput" type="number" min="5" max="60" value="20">
+          </label>
+          <label>
+            Speed (ms):
+            <input id="speedInput" type="number" min="10" max="1000" step="10" value="120">
+          </label>
+          <button id="generateBtn">Generate Random Array</button>
+          <button id="shuffleBtn">Shuffle</button>
+          <button id="stepBtn">Step</button>
+          <button id="sortBtn">Animate Sort</button>
+          <button id="stopBtn" disabled>Stop</button>
+        </div>
+
+        <div id="visualContainer" class="visual-container" aria-live="polite" aria-atomic="true">
+          <!-- bars are rendered here by JS -->
+        </div>
+
+        <div class="stats" id="stats">
+          <strong>Comparisons:</strong> <span id="comparisons">0</span>
+          &nbsp;|&nbsp;
+          <strong>Swaps:</strong> <span id="swaps">0</span>
+        </div>
+      </section>
+    </main>
+
+    <aside class="site-ad" aria-label="Advertisement">
+      <a href="https://www.amazon.com/Northern-University-Lumberjacks-Embroirderd-Adjustable/dp/B0C86DZJYS/ref=sr_1_10?crid=3RNF03TP8TWJY&dib=eyJ2IjoiMSJ9.UonhQRj2zHHRhZjKZUq3Xii8TYEmxRnT05PGxwLz_H5opvxwPbV5-XzO0V98d33oXp5JDR1KesKlMVqCqD7b92F96OTCdLONrUqUcxSgFTeSOyMhqgyFOxTwtLmkkvolPJP1ut8MPDeMBp0UxKIoiRHmPXUfaH8uk64wV5dDYJSLxX-_AXf2prtv1v5b9j6pMJcxAHSaknwhLyWNp2L_XPHkCigBNxee0S8TzEmLR1P-thM4YBSgMe8ByRXVnPc65_v1kAnqJUiZIPU0jt2IH69sSWY6zbpNpxuTpxTRQ5A.TLiWubqh6CjkZx6rOSX_wk2X9hCB2JTUvHAXApS_TJ0&dib_tag=se&keywords=nau+lumberjacks&qid=1761625163&sprefix=nau+lumberjack%2Caps%2C200&sr=8-10" target="_blank" rel="noopener noreferrer">
+        <!-- Replace placeholder image / link with an actual Amazon product page and image if you want -->
+        <img src="https://m.media-amazon.com/images/I/51R4Hra8SqL._AC_SX679_.jpg" width="300" height="350ß" alt="Ad: Shop on Amazon">
+      </a>
+    </aside>
+
+    <footer class="site-footer" role="contentinfo">
+      <div class="footer-inner">
+        <section class="addendum">
+          <h3>Addendum — Project Description</h3>
+          <p>
+            <strong>Problem solved:</strong> Implemented a bubble-sort visualizer that demonstrates comparisons and swaps,
+            allows stepping through single operations, animating the full sort, shuffling and re-generating arrays,
+            and shows live counts of comparisons and swaps.
+          </p>
+          <p>
+            <strong>Approach:</strong> A modular JS file generates an array, renders bars into the DOM, and runs a generator-based
+            bubble sort algorithm so we can pause/resume/step. The animation is driven by `setTimeout` for simple speed control.
+          </p>
+          <p>
+            <strong>Difficulties & solutions:</strong> 1) Keeping DOM updates smooth — solved by batching DOM updates and only re-rendering affected bars.
+            2) Stopping mid-animation — solved by tracking a `running` flag and clearing scheduled timeouts. 3) Accessibility — added aria-live region and labels.
+          </p>
+        </section>
+
+        <p class="meta">Author: Paul Revanth Madasu — ITC505 Lab 6</p>
+
+        <p>Last updated:
+          <span id="lastModified"></span>
+        </p>
+      </div>
+
+      <!-- professor-required lastModified script (embedded before </body>) -->
+      <script type="text/javascript">
+           var x = document.lastModified;
+           document.getElementById('lastModified').textContent = x;
+      </script>
+    </footer>
+  </div>
+
+  <!-- App script (kept separate) -->
+  <script src="script.js" defer></script>
+</body>
+</html>
